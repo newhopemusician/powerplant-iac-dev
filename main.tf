@@ -1,15 +1,12 @@
 provider "aws" {
-
-	#region = var.region
-	region = "us-east-2"
-
+	region = var.region
 }
 
 resource "aws_instance" "web" {
 	ami = "ami-0592ba606c3e12141"
 	subnet_id = aws_subnet.publicsubnet.id
 	instance_type = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.allow_all.id]
+  	vpc_security_group_ids = [aws_security_group.allow_all.id]
 	associate_public_ip_address = "true"
 
 	tags = {
