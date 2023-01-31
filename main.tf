@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "web" {
-	ami = "ami-0592ba606c3e12141"
+	ami = "ami-05493f3cb47c6462e"
 	subnet_id = aws_subnet.publicsubnet.id
 	instance_type = "t2.micro"
   	vpc_security_group_ids = [aws_security_group.allow_all.id]
