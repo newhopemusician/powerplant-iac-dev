@@ -10,7 +10,7 @@ resource "aws_instance" "web" {
 	associate_public_ip_address = "true"
 
 	tags = {
-		Name = "Doh"
+		Name = "Doh!"
 	}
 }
 
