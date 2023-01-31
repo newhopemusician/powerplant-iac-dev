@@ -10,8 +10,17 @@ resource "aws_instance" "web" {
 	associate_public_ip_address = "true"
 
 	tags = {
-		Name = "Donuts"
+		Name = "Doh"
 	}
+}
+
+data "aws_eip" "bac_ip" {
+	public_ip = "3.20.19.133"
+}
+
+resource "aws_eip_association" "bac_assoc" {
+	instance_id = aws_instance.web.id
+	allocation_id = data.aws_eip.bac_ip.id
 }
 
 resource "aws_vpc" "Main" {                # Creating VPC here
