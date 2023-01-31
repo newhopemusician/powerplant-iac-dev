@@ -15,7 +15,7 @@ resource "aws_instance" "web" {
 }
 
 data "aws_eip" "bac_ip" {
-	public_ip = "18.119.71.2"
+	public_ip = "3.22.150.18"
 }
 
 resource "aws_eip_association" "bac_assoc" {
