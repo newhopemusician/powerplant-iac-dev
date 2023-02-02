@@ -3,9 +3,9 @@ provider "aws" {
 }
 
 resource "aws_instance" "web" {
-	ami = "ami-0471021a4ee6bfcce"
+	ami = var.ami
 	subnet_id = aws_subnet.publicsubnet.id
-	instance_type = "t2.micro"
+	instance_type = var.insttype
   	vpc_security_group_ids = [aws_security_group.allow_all.id]
 	associate_public_ip_address = "true"
 
