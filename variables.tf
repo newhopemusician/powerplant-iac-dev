@@ -1,3 +1,15 @@
+variable "insttype" {
+	default = "t2.micro"
+}
+
+variable "ami" {
+	default = "ami-0471021a4ee6bfcce"
+}
+
+variable "region" {
+	default = "us-east-2"
+}
+
 variable "main_vpc_cidr" {
 	default = "10.0.0.0/24"
 }
@@ -10,6 +22,4 @@ variable "private_subnets" {
 	default = "10.0.0.192/26"
 }
 
-variable "region" {
-	default = "us-east-2"
-}
+
